@@ -4,6 +4,7 @@ exports.up = function(knex, Promise) {
       
       tbl.increments()
       tbl.text('name', 127)
+      tbl.timestamp(true, true)
       tbl.unique('name', 'uq_cohort_name')
   })
 };

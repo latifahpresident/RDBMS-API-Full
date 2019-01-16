@@ -9,6 +9,7 @@ const server = express();
 server.use(express.json());
 
 const url = '/api/cohorts/';
+const studentsurl = '/api/students/';
 
 server.get(url, async(req, res) => {
     try{
@@ -17,6 +18,15 @@ server.get(url, async(req, res) => {
     } catch(err) {
         res.status(500).json(`{error: 'This route does not exsi'}`)
     }
-})
+});
+
+server.get(studentsurl, async(req, res) => {
+    try{
+        const data = await db('students')
+        res.status(200).json(data)
+    } catch(err) {
+        res.status(500).json(`{error: 'This route does not exsi'}`)
+    }
+});
 
 module.exports = server
