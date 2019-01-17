@@ -1,14 +1,13 @@
 
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
-  return knex('cohorts')
-    .truncate()
+  return knex('cohorts').truncate()
     .then(function () {
       // Inserts seed entries
       return knex('cohorts').insert([
-        {name: 'WEB 15'},
-        {name: 'WEB 16'},
-        {name: 'WEB 17'}
+        {id: 1, name: 'one'},
+        {id: 2, name: 'two'},
+        {id: 3, name: 'three'}
       ]);
     });
 };

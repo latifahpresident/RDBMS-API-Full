@@ -7,9 +7,8 @@ exports.up = function(knex, Promise) {
         tbl.timestamp(true, true)
         tbl.unique('name', 'uq_cohort_name')
     })
-  };
-  
-  exports.down = function(knex, Promise) {
-    return knex.schema.dropTableIfExists('cohorts');
-  };
+};
 
+exports.down = function(knex, Promise) {
+    return knex.schema.dropTableIfExists('cohorts');
+};
